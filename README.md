@@ -1,88 +1,77 @@
-# Lab: Linked Lists and Recursion  
-**Lab GitHub Repo**: [Linked Lists and Recursion](https://github.com/learn-co-curriculum/Linked-Lists-and-Recursion)
-
----
+# Recursive Linked List Lab
 
 ## Overview
-In this lab, we’ll apply **linked lists** and **recursion** to build a small prototype for managing a list of data. Imagine a junior developer assigned to maintain a simple employee roster, where IDs are stored in a linked list. You’ve been asked to implement **recursive** functionalities such as summing IDs, reversing the list in-place, and searching for a particular ID.
-
-By focusing on **linked lists** (for dynamic insertion/deletion) and **recursion** (for elegant traversal), you’ll gain hands-on experience with node-based data structures—common in many low-level or performance-sensitive applications.
-
----
-
-## Task 1: Define the Problem
-
-1. **Load or create** an initial linked list of integer IDs.  
-2. **Enable recursive functionality** to:
-   - **Sum** all node data in the list.  
-   - **Reverse** the list in-place.  
-   - **Search** for a given ID.  
-3. **Present** or print the result for each operation in a user-friendly format.
-
-**The Challenge**: Demonstrate your understanding of linked lists while using recursion to solve day-to-day tasks such as searching and reversing data.
+This lab introduces fundamental data structures and algorithmic concepts
+through the implementation of a singly linked list in Python.
+The focus is on understanding node-based structures, recursion, and
+analyzing time and space complexity for common operations.
 
 ---
 
-## Task 2: Determine the Design
+## Project Structure
 
-### Linked List Structure
+Linked-Lists-and-Recursions-Lab/
 
-- **App / Main**  
-  Drive the creation and manipulation of the linked list.  
+Linked-Lists-and-Recursions-Lab/linked_list.py
 
-- **Node Class**  
-  Each node stores an **integer data** and a pointer/reference to `next`.  
+Linked-Lists-and-Recursions-Lab/main.py
 
-- **LinkedList Class**  
-  - `head` references the first node.  
-  - Methods to **insert**, **sum**, **reverse**, and **search**.  
+Linked-Lists-and-Recursions-Lab/tests/
 
----
+Linked-Lists-and-Recursions-Lab/tests/__init__.py
 
-## Task 3: Develop, Test, and Refine the Code
+Linked-Lists-and-Recursions-Lab/tests/test_linked_list.py
 
-### Set Up
+Linked-Lists-and-Recursions-Lab/README.md
 
-#### Fork and Clone
-1. Go to the provided **GitHub repository link**.  
-2. Fork the repository to your GitHub account.  
-3. Clone the forked repository to your local machine.  
 
-#### Open and Run
-1. Open the project in your preferred Python-friendly environment (VSCode, PyCharm, etc.).  
+- linked_list.py contains the Node and LinkedList class implementations
+- main.py serves as a driver file to demonstrate linked list operations
+- tests/test_linked_list.py holds automated unit tests for linked list behavior
+- README.md provides an overview of the lab and its functionality
 
-### Implementation Details
+## Application Overview
+The linked list implementation supports the following operations:
 
-1. **Create a feature branch** (e.g., `feature/linked-list-lab`).  
-2. **Create the `Node` and `LinkedList` classes**:
-   - **Node** class with `data` and `next`.  
-   - **LinkedList** class to house `head` and methods.
-3. **Manage Linked List Insertion**:
-   - `insert_at_front(data)` → O(1).  
-   - *(Optional)* `insert_at_end(data)` → O(n) to traverse to the end.
-4. **Use Recursion**:
-   - **Sum**: Returns `0` if node is `None`, otherwise `node.data + recurse(node.next)`.  
-   - **Reverse**: Re-point each node’s `next` to the **previous** node until the list is reversed.  
-   - **Search**: Returns `True` if a node’s `data` matches the target; stops if it hits `None`.
-5. **Run Tests** (if provided) or manually test:
-   - Insert some sample data, then call each recursive method.  
-   - Print the list or results to confirm correctness.
-6. **Push feature branch** and open a PR on GitHub.
-7. **Merge** to `main` once reviewed.
+Insert at Front
+- Adds a new node to the beginning of the list.
+- Updates the head pointer accordingly.
 
----
+Insert at End
+- Traverses the list to append a new node at the end.
+- Handles insertion into an empty list.
 
-## Task 4: Document and Maintain
+Recursive Sum
+- Uses recursion to calculate the sum of all node values.
+- Returns 0 for an empty list.
 
-### Best Practice Documentation Steps
+Recursive Search
+- Uses recursion to determine whether a target value exists in the list.
+- Returns True if found, otherwise False.
 
-- **Add Comments**: Clarify logic for recursion, highlight base vs. recursive cases.  
-- **Explain Intent**: Make it clear why you’re using recursion in a particular method (e.g., elegance, clarity, demonstration).  
-- **README**: Update with instructions on how to run the code, test, and interpret results.  
-- **Clean Up**:
-  - Remove any debugging prints or stale branches.  
-  - Ensure your `.gitignore` is updated to exclude unnecessary files.
+Recursive Reverse
+- Reverses the linked list in-place using recursion.
+- Updates the head pointer to the new front of the list.
 
-## Submission
-Once the lab is complete, all tests are passing, and you've pushed the completed code to 
-your forked repo on GitHub, submit your GitHub repo through Canvas using CodeGrade.
+Display
+- Traverses the list and prints its contents in a readable format.
+- Used for debugging and verification.
+
+## Key Concepts Covered
+- Singly linked list data structures
+- Node-based memory relationships
+- Recursive algorithms and base cases
+- Time and space complexity analysis
+- In-place data structure manipulation
+
+## Running the Tests
+
+From the project root use the following:
+- python -m unittest
+
+## General project notes
+
+Project passed through ChatGPT to review recursion logic, validate linked
+list behavior, and assist in drafting this README.md file. The README.md
+was reviewed and edited for clarity, consistency, and alignment with lab
+requirements prior to submission.
